@@ -8,10 +8,10 @@
 - Editar tarefas;
 - Deletar tarefas.
 
-<h3>Requisitos:</h3>
+<h2>Requisitos:</h2>
 - Node JS
 
-<h4>Instalação:</h4>
+<h2>Instalação:</h2>
 
 **1** - Clone o repositório:
 ```bash
@@ -28,5 +28,5 @@ $ npm i
 $ npm run dev
 ```
 
-<h5>Figma: </h5>
+<h2>Figma: </h2>
 <a href="https://www.figma.com/file/BdXsLALTATh7zbDDcsSn7Y/to-do?type=design&node-id=0%3A1&mode=design&t=MsxQfP2kD8bHwD6x-1"><img src="https://img.shields.io/static/v1?label=TODO&message=FIGMA&color=2e3480&style=for-the-badge&logo=Heroku"/></a>
