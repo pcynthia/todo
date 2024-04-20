@@ -1,0 +1,92 @@
+.task {
+  width: 100%;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  color: var(--gray-700);
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.task p {
+  width: 100%;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+}
+
+.task button {
+  background-color: transparent;
+  border: none;
+  color: var(--gray-300);
+}
+
+.checkContainer:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.checkbox {
+  border-radius: 100%;
+  height: 1.125rem;
+  width: 1.125rem;
+
+  transition: 0.2s all;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-unchecked {
+  border: 2px solid var(--pink-400);
+}
+
+.checkbox-unchecked:hover {
+  background-color: var(--pink-700);
+}
+
+.checkbox-checked {
+  border: 2px solid var(--pink-700);
+  background-color: var(--pink-700);
+  color: var(--gray-100);
+}
+
+.checkbox-checked:hover {
+  border: 2px solid var(--pink-400);
+  background-color: var(--pink-400);
+}
+
+p.textChecked {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+
+.btn button {
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+
+  padding: 2px 4px 2px 4px;
+
+  transition: 0.2s background-color;
+}
+
+.btn button line, .btn button path {
+  transition: 0.2s fill;
+}
+
+.btn button:hover line, .btn button:hover path {
+  fill: var(--red-500);
+}
