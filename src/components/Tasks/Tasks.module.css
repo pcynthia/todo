@@ -41,3 +41,9 @@
 .header > div > p.done {
   color: var(--green-400);
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
