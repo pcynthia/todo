@@ -42,7 +42,7 @@
 }
 
 .checkbox-unchecked {
-  border: 2px solid var(--pink-400);
+  border: 1px solid var(--pink-400);
 }
 
 .checkbox-unchecked:hover {
