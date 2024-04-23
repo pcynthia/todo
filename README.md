@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+<h1>Todo List</h1> 
+<p>Sistema de gerenciamento de tarefas</p>  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>Funcionalidades:</h2>
 
-Currently, two official plugins are available:
+- Adicionar novas tarefas;
+- Marcar tarefas como concluídas;
+- Editar tarefas;
+- Deletar tarefas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Requisitos:</h2>
+- Node JS
 
-## Expanding the ESLint configuration
+<h2>Instalação:</h2>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+**1** - Clone o repositório:
+```bash
+$ git clone https://github.com/pcynthia/todo-list.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**2** - Instale as dependências:
+```bash
+$ npm i
+```
+
+**3** - Execute o projeto:
+```bash
+$ npm run dev
+```
+
+<h2>Figma: </h2>
+<a href="https://www.figma.com/file/BdXsLALTATh7zbDDcsSn7Y/to-do?type=design&node-id=0%3A1&mode=design&t=MsxQfP2kD8bHwD6x-1"><img src="https://img.shields.io/static/v1?label=TODO&message=FIGMA&color=2e3480&style=for-the-badge&logo=Heroku"/></a>
