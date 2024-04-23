@@ -1,0 +1,10 @@
+.empty {
+  color: var(--gray-300);
+  text-align: center;
+
+  padding: 4rem;
+}
+
+.empty p {
+  font-weight: 700;
+}
