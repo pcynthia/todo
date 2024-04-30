@@ -1,0 +1,53 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.updateTaskForm {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.updateTaskForm input {
+  flex: 1;
+
+  font-size: 1rem;
+
+  color: var(--gray-100);
+  background-color: var(--gray-500);
+
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.updateTaskForm input::placeholder {
+  color: var(--gray-300);
+}
+
+.updateTaskForm > button {
+  display: flex;
+
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: bold;
+  font-size: 0.875rem;
+
+  border: 0;
+  border-radius: 8px;
+  line-height: 140%;
+
+  color: var(--gray-100);
+  background-color: var(--pink-500);
+
+  transition: background 0.1s;
+}
+
+.updateTaskForm button:hover {
+  background-color: var(--pink-400);
+}
