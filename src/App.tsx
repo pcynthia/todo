@@ -10,7 +10,23 @@ export interface TaskProps {
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [tasks, setTasks] = useState<TaskProps[]>([
+    {
+      id: "1",
+      title: "Estudar React",
+      isChecked: false,
+    },
+    {
+      id: "2",
+      title: "Estudar TypeScript",
+      isChecked: false,
+    },
+    {
+      id: "3",
+      title: "Estudar Next.js",
+      isChecked: false,
+    },
+  ]);
 
   function createTask(taskTitle: string) {
     const newTask = {
@@ -20,6 +36,22 @@ export function App() {
     };
 
     setTasks([...tasks, newTask]);
+  }
+
+  function updateTask(taskId: string, newTitleTask: string) {
+    const updatedTask = tasks.map((task) => {
+      if (taskId === task.id) {
+        return {
+          ...task,
+          title: newTitleTask,
+          isChecked: false,
+        };
+      }
+
+      return task;
+    });
+
+    setTasks(updatedTask);
   }
 
   function deleteTask(taskId: string) {
@@ -55,6 +87,7 @@ export function App() {
       <Tasks
         tasks={tasks}
         onDeleteTask={deleteTask}
+        onUpdateTask={updateTask}
         onToggleTaskStatus={toggleTask}
       />
     </>
