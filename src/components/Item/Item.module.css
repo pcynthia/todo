@@ -72,7 +72,6 @@ p.textChecked {
   gap: 0.5rem;
 }
 
-
 .btn button {
   border: none;
   background-color: transparent;
@@ -81,6 +80,10 @@ p.textChecked {
   padding: 2px 4px 2px 4px;
 
   transition: 0.2s background-color;
+}
+
+.btn button:hover {
+  background-color: var(--gray-400);
 }
 
 .btn button line, .btn button path {
