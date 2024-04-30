@@ -7,10 +7,16 @@ import styles from "./Tasks.module.css";
 interface TasksProps {
   tasks: TaskProps[];
   onDeleteTask: (taskId: string) => void;
+  onUpdateTask: (taskId: string, newTitleTask: string) => void;
   onToggleTaskStatus: ({ id, value }: { id: string; value: boolean }) => void;
 }
 
-export function Tasks({ tasks, onDeleteTask, onToggleTaskStatus }: TasksProps) {
+export function Tasks({
+  tasks,
+  onDeleteTask,
+  onUpdateTask,
+  onToggleTaskStatus,
+}: TasksProps) {
   const tasksCounter = tasks.length;
   const checkedTasksCounter = tasks.filter((task) => task.isChecked).length;
 
@@ -37,6 +43,7 @@ export function Tasks({ tasks, onDeleteTask, onToggleTaskStatus }: TasksProps) {
           <Item
             key={task.id}
             data={task}
+            onUpdateTask={onUpdateTask}
             onDeleteTask={onDeleteTask}
             onToggleTaskStatus={onToggleTaskStatus}
           />
