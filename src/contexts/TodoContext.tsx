@@ -22,23 +22,7 @@ interface TodoContextProviderProps {
 }
 
 export function TodoContextProvider({ children }: TodoContextProviderProps) {
-  const [tasks, setTasks] = useState<TaskProps[]>([
-    {
-      id: "1",
-      title: "Estudar React",
-      isChecked: false,
-    },
-    {
-      id: "2",
-      title: "Estudar TypeScript",
-      isChecked: false,
-    },
-    {
-      id: "3",
-      title: "Estudar Next.js",
-      isChecked: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState<TaskProps[]>([]);
 
   function loadTasksFromLocalStorage() {
     const savedTasks = localStorage.getItem(LOCAL_STORAGE_KEY);
