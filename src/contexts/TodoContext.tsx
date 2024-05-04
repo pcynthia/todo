@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { TaskProps } from "../types/tasks";
 
 interface CreateTaskProps {
@@ -12,6 +12,8 @@ interface TodoContextType {
   removeTask: (taskId: string) => void;
   toggleTask: (taskId: string, value: boolean) => void;
 }
+
+const LOCAL_STORAGE_KEY = "tasks";
 
 export const TodoContext = createContext({} as TodoContextType);
 
@@ -38,6 +40,20 @@ export function TodoContextProvider({ children }: TodoContextProviderProps) {
     },
   ]);
 
+  function loadTasksFromLocalStorage() {
+    const savedTasks = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+  }
+
+  function setTasksAndSaveOnLocalStorage(tasks: TaskProps[]) {
+    setTasks(tasks);
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+  }
+
   function createTask(data: CreateTaskProps) {
     const newTask = {
       id: crypto.randomUUID(),
@@ -45,7 +61,7 @@ export function TodoContextProvider({ children }: TodoContextProviderProps) {
       isChecked: false,
     };
 
-    setTasks([...tasks, newTask]);
+    setTasksAndSaveOnLocalStorage([...tasks, newTask]);
   }
 
   function updateTask(taskId: string, newTitleTask: string) {
@@ -61,7 +77,7 @@ export function TodoContextProvider({ children }: TodoContextProviderProps) {
       return task;
     });
 
-    setTasks(updatedTask);
+    setTasksAndSaveOnLocalStorage(updatedTask);
   }
 
   function removeTask(taskId: string) {
@@ -69,7 +85,7 @@ export function TodoContextProvider({ children }: TodoContextProviderProps) {
       return task.id !== taskId;
     });
 
-    setTasks(tasksWithoutDeletedOne);
+    setTasksAndSaveOnLocalStorage(tasksWithoutDeletedOne);
   }
 
   function toggleTask(taskId: string, value: boolean) {
@@ -84,8 +100,12 @@ export function TodoContextProvider({ children }: TodoContextProviderProps) {
       return { ...task };
     });
 
-    setTasks(updatedTasks);
+    setTasksAndSaveOnLocalStorage(updatedTasks);
   }
+
+  useEffect(() => {
+    loadTasksFromLocalStorage();
+  }, []);
 
   return (
     <TodoContext.Provider
