@@ -13,6 +13,7 @@
     "@phosphor-icons/react": "^2.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-modal": "^3.16.1"
   },
   "devDependencies": {
