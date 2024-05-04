@@ -1,26 +1,29 @@
 import { PencilSimple, XCircle } from "@phosphor-icons/react";
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  InvalidEvent,
+  useContext,
+  useState,
+} from "react";
 
 import Modal from "react-modal";
-import { TaskProps } from "../../App";
+
+import { TodoContext } from "../../contexts/TodoContext";
+import { TaskProps } from "../../types/tasks";
+
 import styles from "../Modal/Modal.module.css";
 
 interface EditModalProps {
   task: TaskProps;
   isOpen: boolean;
-  onUpdateTask: (taskId: string, newTitleTask: string) => void;
   onCloseModal: () => void;
 }
 
-export function EditModal({
-  task,
-  isOpen,
-  onUpdateTask,
-  onCloseModal,
-}: EditModalProps) {
-  console.log("task", task);
-
+export function EditModal({ task, isOpen, onCloseModal }: EditModalProps) {
   const [newTitleTask, setNewTitleTask] = useState(task.title);
+
+  const { updateTask } = useContext(TodoContext);
 
   function handleUpdateTask(event: FormEvent) {
     event.preventDefault();
@@ -31,7 +34,7 @@ export function EditModal({
       return;
     }
 
-    onUpdateTask(task.id, newTitleTask);
+    updateTask(task.id, newTitleTask);
     onCloseModal();
   }
 

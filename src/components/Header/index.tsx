@@ -1,18 +1,25 @@
 import { PlusCircle } from "@phosphor-icons/react";
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  InvalidEvent,
+  useContext,
+  useState,
+} from "react";
+import toast from "react-hot-toast";
+import { TodoContext } from "../../contexts/TodoContext";
 import styles from "./Header.module.css";
 
-interface HeaderProps {
-  onAddTask: (taskTitle: string) => void;
-}
+export function Header() {
+  const { createTask } = useContext(TodoContext);
 
-export function Header({ onAddTask }: HeaderProps) {
   const [newTask, setNewTask] = useState("");
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
-    onAddTask(newTask);
+    createTask({ title: newTask });
     setNewTask("");
+    toast.success("Tarefa criada com sucesso! 🚀");
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
