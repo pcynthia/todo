@@ -93,3 +93,30 @@ p.textChecked {
 .btn button:hover line, .btn button:hover path {
   fill: var(--red-500);
 }
+
+.confirmRemoveContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 0.5rem;
+}
+
+.btnCancel {
+  color: var(--gray-100);
+  background-color: var(--gray-700);
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 0.75rem;
+}
+
+.btnConfirmRemove {
+  color: var(--gray-100);
+  background-color: var(--pink-600);
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 0.75rem;
+}

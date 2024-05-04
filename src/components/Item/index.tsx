@@ -7,6 +7,7 @@ import { TaskProps } from "../../types/tasks";
 
 import { EditModal } from "../Modal";
 
+import toast from "react-hot-toast";
 import styles from "./Item.module.css";
 
 interface ItemProps {
@@ -28,6 +29,29 @@ export function Item({ data }: ItemProps) {
 
   function handleRemoveTask() {
     removeTask(data.id);
+
+    toast.dismiss();
+    toast.success("Tarefa removida com sucesso! 🗑️");
+  }
+
+  function confirmRemoveTask() {
+    toast(() => (
+      <div>
+        <p>Tem certeza que deseja remover a tarefa?</p>
+
+        <div className={styles.confirmRemoveContainer}>
+          <button className={styles.btnCancel} onClick={() => toast.dismiss()}>
+            Cancelar
+          </button>
+          <button
+            className={styles.btnConfirmRemove}
+            onClick={handleRemoveTask}
+          >
+            Remover
+          </button>
+        </div>
+      </div>
+    ));
   }
 
   function handleToggleModal() {
@@ -56,7 +80,7 @@ export function Item({ data }: ItemProps) {
         />
 
         <div className={styles.btn}>
-          <button onClick={handleRemoveTask}>
+          <button onClick={confirmRemoveTask}>
             <Trash size={16} />
           </button>
         </div>
