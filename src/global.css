@@ -13,10 +13,12 @@
   --gray-400: #333333;
   --gray-500: #262626;
   --gray-600: #1A1A1A;
-  --gray-700: #0D0D0D;
+  --gray-700: #1d1f20;
+  --gray-800: #0D0D0D;
 
   --pink-400: #EF83E7;
   --pink-500: #E565DC;
+  --pink-600: #C633B9;
   --pink-700: #682168;
 
   --green-400:#65E671;
@@ -75,4 +77,10 @@ button {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+}
+
+@media(max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
 }

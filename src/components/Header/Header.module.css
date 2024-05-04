@@ -53,3 +53,9 @@
 .newTaskForm button:hover {
   background-color: var(--pink-400);
 }
+
+@media(max-width: 768px) {
+  .newTaskForm input {
+    font-size: 0.875rem;
+  }
+}

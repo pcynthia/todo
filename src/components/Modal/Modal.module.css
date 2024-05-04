@@ -51,3 +51,10 @@
 .updateTaskForm button:hover {
   background-color: var(--pink-400);
 }
+
+@media (max-width: 768px) {
+  .updateTaskForm {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
